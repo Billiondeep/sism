@@ -1,0 +1,170 @@
+2025-06-17 10:10:07: <br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\frame_8.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrspec.php</b> on line <b>568</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_0\mask_49_0.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_1\mask_49_1.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_2\mask_49_2.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_3\mask_49_3.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_4\mask_49_4.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_5\mask_49_5.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_6\mask_49_6.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_7\mask_49_7.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+2025-06-17 10:11:02: <br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\frame_8.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrspec.php</b> on line <b>568</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_0\mask_49_0.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_1\mask_49_1.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_2\mask_49_2.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_3\mask_49_3.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_4\mask_49_4.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_5\mask_49_5.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_6\mask_49_6.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_7\mask_49_7.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+2025-06-17 10:11:52: <br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\frame_8.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrspec.php</b> on line <b>568</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_0\mask_49_0.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_1\mask_49_1.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_2\mask_49_2.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_3\mask_49_3.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_4\mask_49_4.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_5\mask_49_5.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_6\mask_49_6.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_7\mask_49_7.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+2025-06-17 10:13:16: <br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\frame_8.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrspec.php</b> on line <b>568</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_0\mask_49_0.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_1\mask_49_1.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_2\mask_49_2.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_3\mask_49_3.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_4\mask_49_4.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_5\mask_49_5.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_6\mask_49_6.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_7\mask_49_7.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+2025-06-17 10:13:38: <br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\frame_8.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrspec.php</b> on line <b>568</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_0\mask_49_0.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_1\mask_49_1.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_2\mask_49_2.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_3\mask_49_3.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_4\mask_49_4.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_5\mask_49_5.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_6\mask_49_6.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(C:\xampp\htdocs\sism-rt-rw\lib\cache\mask_7\mask_49_7.dat): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\sism-rt-rw\lib\qrmask.php</b> on line <b>155</b><br />

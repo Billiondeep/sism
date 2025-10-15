@@ -1,8 +1,8 @@
 <?php
-// FILE: register.php (KODE YANG DIPERBAIKI - STANDALONE)
+// FILE: register.php (KODE YANG DIPERBAIKI - DENGAN VALIDASI PASSWORD MINIMAL 6 KARAKTER)
 
 session_start();
-// Jika user sudah login, arahkan ke dashboard, jangan biarkan mendaftar lagi.
+// Jika user sudah login, arahkan ke dashboard
 if (isset($_SESSION['user_id'])) {
     header('Location: dashboard.php');
     exit();
@@ -20,8 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sandi = $_POST['sandi'];
     $sandi_konfirmasi = $_POST['sandi_konfirmasi'];
 
+    // Validasi input
     if (empty($nama) || empty($email) || empty($sandi) || empty($telp)) {
         $error = 'Semua field wajib diisi.';
+    } elseif (strlen($sandi) < 6) {
+        $error = 'Password minimal 6 karakter.';
     } elseif ($sandi !== $sandi_konfirmasi) {
         $error = 'Konfirmasi password tidak cocok!';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -52,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrasi - SISM RT/RW</title>
-    <!-- Link ke CSS lokal agar halaman registrasi tetap rapi -->
     <link href="/sism-rt-rw/assets/css/style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php if ($success): ?>
                  <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-md" role="alert"><p><?php echo $success; ?></p></div>
             <?php else: ?>
-            <form class="space-y-6" action="register.php" method="POST">
+            <form class="space-y-6" action="register.php" method="POST" onsubmit="return validatePassword()">
                 <div>
                     <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
                     <input id="nama" name="nama" type="text" required class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -94,12 +96,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input id="telp" name="telp" type="tel" required placeholder="6281234567890" class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
                 <div>
-                    <label for="sandi" class="block text-sm font-medium text-gray-700">Password</label>
-                    <input id="sandi" name="sandi" type="password" required class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <label for="sandi" class="block text-sm font-medium text-gray-700">Password (minimal 6 karakter)</label>
+                    <input id="sandi" name="sandi" type="password" minlength="6" required class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
                 <div>
                     <label for="sandi_konfirmasi" class="block text-sm font-medium text-gray-700">Konfirmasi Password</label>
-                    <input id="sandi_konfirmasi" name="sandi_konfirmasi" type="password" required class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="sandi_konfirmasi" name="sandi_konfirmasi" type="password" minlength="6" required class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
                 <div>
                     <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -117,5 +119,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </div>
+
+<script>
+function validatePassword() {
+    const sandi = document.getElementById("sandi").value;
+    const konfirmasi = document.getElementById("sandi_konfirmasi").value;
+    if (sandi.length < 6) {
+        alert("Password minimal 6 karakter!");
+        return false;
+    }
+    if (sandi !== konfirmasi) {
+        alert("Konfirmasi password tidak cocok!");
+        return false;
+    }
+    return true;
+}
+</script>
 </body>
 </html>

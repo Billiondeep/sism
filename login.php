@@ -1,11 +1,12 @@
 <?php
-// FILE: login.php (KODE YANG DIPERBAIKI - STANDALONE)
+// FILE: login.php (DENGAN PESAN ERROR SPESIFIK)
 
 session_start();
 if (isset($_SESSION['user_id'])) {
     header('Location: dashboard.php');
     exit();
 }
+// Asumsi 'config/database.php' berisi fungsi getDbConnection()
 include_once 'config/database.php';
 $error = '';
 
@@ -13,38 +14,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = trim($_POST['email']);
     $sandi = trim($_POST['sandi']);
 
-    // Validasi input kosong
+    // Validasi input kosong dan panjang sandi
     if (empty($email)) {
         $error = 'Email wajib diisi.';
     } elseif (empty($sandi)) {
         $error = 'Password wajib diisi.';
-        } elseif (strlen($sandi) < 6) {
+    } elseif (strlen($sandi) < 6) {
         $error = 'Password minimal 6 karakter.';
     } else {
         $db = getDbConnection();
-        $email = pg_escape_string($db, $email);
 
+        // Gunakan prepared statement untuk keamanan
         $result = pg_query_params($db, 'SELECT * FROM "user" WHERE email = $1', array($email));
 
         if ($result === false) {
-                $error = 'Terjadi kesalahan saat mengakses data pengguna. Silakan coba lagi nanti.';
-                error_log('Query login gagal: ' . pg_last_error($db));
-            } elseif ($user = pg_fetch_assoc($result)) {
-                if (password_verify($sandi, $user['sandi'])) {
-                    $_SESSION['user_id'] = $user['id'];
-                    $_SESSION['nama'] = $user['nama'];
-                    $_SESSION['level'] = $user['level'];
-                    $_SESSION['telp'] = $user['telp'];
-                    header('Location: dashboard.php');
-                    exit();
-                } else {
-                    $error = 'Password salah.';
-                }
+            $error = 'Terjadi kesalahan saat mengakses data pengguna. Silakan coba lagi nanti.';
+            error_log('Query login gagal: ' . pg_last_error($db));
+        } elseif ($user = pg_fetch_assoc($result)) {
+            // SCENARIO 2: Email ditemukan, verifikasi password
+            if (password_verify($sandi, $user['sandi'])) {
+                // Set sesi dan redirect
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['nama'] = $user['nama'];
+                $_SESSION['level'] = $user['level'];
+                $_SESSION['telp'] = $user['telp'];
+                header('Location: dashboard.php');
+                exit();
             } else {
-                $error = 'Email tidak terdaftar.';
+                // SCENARIO 2 GAGAL: Email ditemukan, tapi password salah
+                $error = 'Password salah.'; 
             }
+        } else {
+            // SCENARIO 1: Email tidak ditemukan
+            $error = 'Email tidak terdaftar.'; 
         }
     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="id" class="h-full bg-gray-100">
@@ -52,7 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - SISM RT/RW</title>
-    <!-- Link ke CSS lokal agar halaman login tetap rapi -->
     <link href="/sism-rt-rw/assets/css/style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,12 +92,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="mt-1">
             <input id="email" name="email" type="email" autocomplete="email"
                 class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
-                placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                value="<?php echo isset($email) ? htmlspecialchars($email) : ''; ?>">
         </div>
     </div>
 
     <div>
-        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <div class="flex justify-between items-center">
+            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <div class="text-sm">
+                <a href="lupa_sandi.php" class="font-medium text-indigo-600 hover:text-indigo-500">
+                    Lupa Password?
+                </a>
+            </div>
+        </div>
         <div class="mt-1">
             <input id="password" name="sandi" type="password" autocomplete="current-password"
                 class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm

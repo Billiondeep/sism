@@ -18,19 +18,56 @@ $user = pg_fetch_assoc($result);
         <form action="update_profil.php" method="POST" class="space-y-6">
             <div>
                 <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
-                <input type="text" name="nama" id="nama" value="<?php echo htmlspecialchars($user['nama']); ?>" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                <input 
+                    type="text" 
+                    name="nama" 
+                    id="nama" 
+                    value="<?php echo htmlspecialchars($user['nama']); ?>" 
+                    required 
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                >
             </div>
+
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700">Email (Tidak bisa diubah)</label>
-                <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($user['email']); ?>" readonly class="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-gray-100">
+                <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    value="<?php echo htmlspecialchars($user['email']); ?>" 
+                    readonly 
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-gray-100"
+                >
             </div>
+
             <div>
-                <label for="telp" class="block text-sm font-medium text-gray-700">Nomor Telepon (Format: 628...)</label>
-                <input type="text" name="telp" id="telp" value="<?php echo htmlspecialchars($user['telp']); ?>" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                <label for="telp" class="block text-sm font-medium text-gray-700">
+                    Nomor Telepon
+                </label>
+                <input 
+                    type="tel" 
+                    name="telp" 
+                    id="telp" 
+                    value="<?php echo htmlspecialchars($user['telp']); ?>" 
+                    placeholder="081234567890"
+                    pattern="[0-9]{10,15}"
+                    title="Nomor telepon harus 10–15 digit angka tanpa spasi atau simbol"
+                    maxlength="15"
+                    required
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                >
+                <p class="text-xs text-gray-500 mt-1">Hanya angka 0–9, tanpa spasi atau tanda (+)</p>
             </div>
+
             <div class="flex justify-end pt-4 space-x-2">
                 <a href="profil.php" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300">Batal</a>
-                <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Simpan Perubahan</button>
+                <button 
+                    type="submit" 
+                    class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+                >
+                    Simpan Perubahan
+                </button>
             </div>
         </form>
     </div>

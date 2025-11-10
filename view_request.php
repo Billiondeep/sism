@@ -39,7 +39,6 @@ if ($data === false) die("Data pengajuan tidak ditemukan.");
 </div>
 
 <div class="mt-6 bg-white shadow-xl rounded-lg overflow-hidden">
-    <!-- ... (Kode untuk menampilkan detail data tetap sama) ... -->
     <div class="px-4 py-5 sm:px-6 bg-gray-50 border-b">
         <h3 class="text-lg leading-6 font-medium text-gray-900">Informasi Pemohon</h3>
     </div>
@@ -64,7 +63,7 @@ if ($data === false) die("Data pengajuan tidak ditemukan.");
 </div>
 
 <?php if (isset($data['status']) && $data['status'] !== 'Selesai' && $data['status'] !== 'Ditolak'): ?>
-    <!-- Tampilkan form persetujuan jika status BELUM final -->
+    <!-- Form persetujuan jika status belum final -->
     <div class="mt-8 bg-white shadow-xl rounded-lg p-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Aksi Persetujuan</h3>
         <form action="/sism-rt-rw/update_status.php" method="POST" class="space-y-4">
@@ -90,19 +89,18 @@ if ($data === false) die("Data pengajuan tidak ditemukan.");
         </form>
     </div>
 <?php else: ?>
-    <!-- Tampilkan tombol aksi lanjutan jika status SUDAH final -->
+    <!-- Aksi lanjutan jika status sudah final -->
     <div class="mt-8 bg-white shadow-xl rounded-lg p-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Aksi Lanjutan</h3>
         <?php if ($data['status'] === 'Selesai'): ?>
-            <p class="text-sm text-gray-600 mb-4">Pengajuan ini telah disetujui. Anda dapat melihat PDF atau mengirim ulang notifikasi ke warga.</p>
+            <p class="text-sm text-gray-600 mb-4">Pengajuan ini telah disetujui. Anda dapat melihat PDF surat yang telah dibuat.</p>
             <div class="flex items-center space-x-4">
                 <a href="/sism-rt-rw/generate_pdf.php?type=<?php echo $type; ?>&id=<?php echo $id; ?>" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
                     Lihat PDF
-                </a>
-                <a href="/sism-rt-rw/resend_wa.php?type=<?php echo $type; ?>&id=<?php echo $id; ?>" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    Kirim Ulang ke WA
                 </a>
             </div>
         <?php else: // Status Ditolak ?>
@@ -110,4 +108,5 @@ if ($data === false) die("Data pengajuan tidak ditemukan.");
         <?php endif; ?>
     </div>
 <?php endif; ?>
+
 <?php include_once __DIR__ . '/includes/footer.php'; ?>

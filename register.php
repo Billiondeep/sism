@@ -1,5 +1,5 @@
 <?php
-// FILE: register.php (KODE YANG DIPERBAIKI - DENGAN VALIDASI PASSWORD MINIMAL 6 KARAKTER)
+// FILE: register.php (DENGAN VALIDASI NOMOR TELEPON HANYA ANGKA)
 
 session_start();
 // Jika user sudah login, arahkan ke dashboard
@@ -23,6 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validasi input
     if (empty($nama) || empty($email) || empty($sandi) || empty($telp)) {
         $error = 'Semua field wajib diisi.';
+    } elseif (!preg_match('/^[0-9]{10,15}$/', $telp)) {
+        $error = 'Nomor telepon hanya boleh angka dan harus 10–15 digit.';
     } elseif (strlen($sandi) < 6) {
         $error = 'Password minimal 6 karakter.';
     } elseif ($sandi !== $sandi_konfirmasi) {
@@ -30,10 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = 'Format email tidak valid.';
     } else {
+        // Periksa apakah email sudah terdaftar
         $result = pg_query_params($db, 'SELECT id FROM "user" WHERE email = $1', array($email));
         if (pg_num_rows($result) > 0) {
             $error = 'Email sudah terdaftar. Silakan gunakan email lain.';
         } else {
+            // Hash password dan simpan data
             $sandi_hash = password_hash($sandi, PASSWORD_DEFAULT);
             $query = 'INSERT INTO "user" (nama, email, telp, sandi, level) VALUES ($1, $2, $3, $4, \'warga\')';
             $insert_result = pg_query_params($db, $query, array($nama, $email, $telp, $sandi_hash));
@@ -77,34 +81,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-lg">
         <div class="bg-white py-8 px-4 shadow-xl rounded-lg sm:px-10">
             <?php if ($error): ?>
-                <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-md" role="alert"><p><?php echo $error; ?></p></div>
+                <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-md" role="alert">
+                    <p><?php echo $error; ?></p>
+                </div>
             <?php endif; ?>
             <?php if ($success): ?>
-                 <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-md" role="alert"><p><?php echo $success; ?></p></div>
+                <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-md" role="alert">
+                    <p><?php echo $success; ?></p>
+                </div>
             <?php else: ?>
             <form class="space-y-6" action="register.php" method="POST" onsubmit="return validatePassword()">
                 <div>
                     <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
-                    <input id="nama" name="nama" type="text" required class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="nama" name="nama" type="text" required 
+                        class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+                        placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input id="email" name="email" type="email" required class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="email" name="email" type="email" required 
+                        class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+                        placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
-                 <div>
-                    <label for="telp" class="block text-sm font-medium text-gray-700">No. WhatsApp (Format: 628...)</label>
-                    <input id="telp" name="telp" type="tel" required placeholder="6281234567890" class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <div>
+                    <label for="telp" class="block text-sm font-medium text-gray-700">Nomor Telepon</label>
+                    <input id="telp" name="telp" type="tel" required placeholder="081234567890"
+                        pattern="[0-9]{10,15}" title="Nomor telepon harus 10–15 digit angka"
+                        maxlength="15" oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+                        placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
                 <div>
                     <label for="sandi" class="block text-sm font-medium text-gray-700">Password (minimal 6 karakter)</label>
-                    <input id="sandi" name="sandi" type="password" minlength="6" required class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="sandi" name="sandi" type="password" minlength="6" required 
+                        class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+                        placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
                 <div>
                     <label for="sandi_konfirmasi" class="block text-sm font-medium text-gray-700">Konfirmasi Password</label>
-                    <input id="sandi_konfirmasi" name="sandi_konfirmasi" type="password" minlength="6" required class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="sandi_konfirmasi" name="sandi_konfirmasi" type="password" minlength="6" required 
+                        class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+                        placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
                 <div>
-                    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <button type="submit" 
+                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm 
+                        text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         Daftar
                     </button>
                 </div>
@@ -134,6 +157,11 @@ function validatePassword() {
     }
     return true;
 }
+
+// Pastikan hanya angka di input telepon
+document.getElementById('telp').addEventListener('input', function (e) {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
 </script>
 </body>
 </html>
